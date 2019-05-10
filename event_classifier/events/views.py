@@ -5,7 +5,7 @@ from .models import Event
 
 def event_list(request):
     events = Event.objects.all().order_by('date')
-    return render(request, "events/event_list.html", {'events':events})
+    return render(request, "events/events_list.html", {'events':events})
 
 def event_detail(request,slug):
     #return HttpResponse(slug)

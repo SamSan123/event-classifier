@@ -18,6 +18,9 @@ from django.urls import path
 from django.conf.urls import url, include
 from . import views
 from events import views as event_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -26,3 +29,5 @@ urlpatterns = [
     url(r'^$', event_views.event_list, name = "home"),
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
